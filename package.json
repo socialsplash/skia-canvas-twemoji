@@ -1,27 +1,27 @@
 {
-  "name": "node-canvas-with-twemoji",
-  "version": "0.1.5",
-  "description": "Draw text with Twemoji on node-canvas",
+  "name": "skia-canvas-twemoji",
+  "version": "0.2.0",
+  "description": "Draw text with Twemoji on skia-canvas. Forked from cagpie's node-canvas-with-twemoji",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cagpie/node-canvas-with-twemoji.git"
+    "url": "git+https://github.com/PolestarLabs/skia-canvas-twemoji.git"
   },
   "bugs": {
-    "url": "https://github.com/cagpie/node-canvas-with-twemoji/issues"
+    "url": "https://github.com/PolestarLabs/skia-canvas-twemoji/issues"
   },
-  "homepage": "https://github.com/cagpie/node-canvas-with-twemoji#readme",
+  "homepage": "https://github.com/PolestarLabs/skia-canvas-twemoji#readme",
   "keywords": [
     "canvas",
-    "node-canvas",
+    "skia-canvas",
     "twemoji",
     "emoji",
-    "node-canvas-with-twemoji"
+    "skia-canvas-twemoji"
   ],
-  "author": "cagpie <cagpie@gmail.com>",
+  "author": "tsumari <tsumari@pollux.gg>",
   "license": "MIT",
   "dependencies": {
     "skia-canvas": "^0.9.23",

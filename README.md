@@ -1,11 +1,11 @@
-# node-canvas-with-twemoji
+# node-canvas-twemoji
 
-This is a module that is able to draw emoji on node-canvas.
+This is a module that is able to draw emoji on skia-canvas.
 
 ## Quick Example
 ```javascript
 const { Canvas } = require('skia-canvas');
-const { fillTextWithTwemoji } = require('node-canvas-with-twemoji');
+const { fillTextWithTwemoji } = require('@polestar/skia-canvas-twemoji');
 
 async function main () {
     const canvas = new Canvas(200, 200);
@@ -13,7 +13,7 @@ async function main () {
 
     context.fillStyle = '#000000';
     context.font = '30px Arial';
-    await fillTextWithTwemoji(context, 'emoji 😉', 100, 100);
+    await fillTextWithTwemoji(context, 'emoji 🎀', 100, 100);
 }
 
 main();
@@ -21,13 +21,13 @@ main();
 
 ## Dependencies
 
-- skia-canvas
+- skia-canvas [GitHub](https://github.com/samizdatco/skia-canvas)
 - twemoji-parser [GitHub](https://github.com/twitter/twemoji-parser)
 
 ## Licence
 
-### node-canvas-with-twemoji
+### skia-canvas-twemoji
 
-Copyright (c) 2020-2021 cagpie / Shun Kobayashi <cagpie@gmail.com>
+Copyright (c) 2020-2021 cagpie / Shun Kobayashi <cagpie@gmail.com>, Polestar Labs <labs@pollux.gg>
 
 Code licensed under the MIT License: http://opensource.org/licenses/MIT
