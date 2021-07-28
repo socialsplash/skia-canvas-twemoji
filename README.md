@@ -2,19 +2,13 @@
 
 This is a module that is able to draw emoji on node-canvas.
 
-## Installation
-```shell
-$ npm install node-canvas-with-twemoji
-```
-[npm](https://www.npmjs.com/package/node-canvas-with-twemoji)
-
 ## Quick Example
 ```javascript
-const { createCanvas } = require('canvas');
+const { Canvas } = require('skia-canvas');
 const { fillTextWithTwemoji } = require('node-canvas-with-twemoji');
 
 async function main () {
-    const canvas = createCanvas(200, 200);
+    const canvas = new Canvas(200, 200);
     const context = canvas.getContext('2d');
 
     context.fillStyle = '#000000';
@@ -27,7 +21,7 @@ main();
 
 ## Dependencies
 
-- node-canvas [GitHub](https://github.com/Automattic/node-canvas)
+- skia-canvas
 - twemoji-parser [GitHub](https://github.com/twitter/twemoji-parser)
 
 ## Licence
