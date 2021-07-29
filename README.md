@@ -1,4 +1,4 @@
-# node-canvas-twemoji
+# skia-canvas-twemoji
 
 This is a module that is able to draw emoji on skia-canvas.
 
