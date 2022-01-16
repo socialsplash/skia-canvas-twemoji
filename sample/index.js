@@ -1,8 +1,10 @@
 const express = require('express');
-const { Canvas } = require('skia-canvas');
+const { Canvas, loadImage } = require('skia-canvas');
 const base64 = require('urlsafe-base64');
 
-const wt = require('../src/index');
+const wt = require('../dist/index');
+
+// console.log('ok', wt.loadImageFromUrl)
 
 const app = express();
 
@@ -15,38 +17,49 @@ app.get('/', async (req, res) => {
 
   context.fillStyle = '#000000';
   context.font = '30px serif';
-  await wt.fillTextWithTwemoji(context, 'test😉', 10, 50);
+  // await wt.fillTextWithEmoji(context, 'test😉', 10, 50);
+
+  // const img = await wt.loadImageFromUrl('https://twemoji.maxcdn.com/v/latest/72x72/1f609.png');
+  // context.drawImage(img, 0, 0);
 
   context.fillStyle = '#888888';
   context.font = '18px serif';
   context.textAlign = "left";
   context.fillStyle = '#888888';
-  await wt.fillTextWithTwemoji(context, 'I am left aligned 😳', 10, 100, {maxWidth: 50});
+  await wt.fillTextWithEmoji(context, 'I 🎉 am left aligned 😳', 30, 30, { loadImage });
 
   context.textAlign = "center";
-  await wt.fillTextWithTwemoji(context, '我々✨は宇宙人👽だ', 100, 150, {maxWidth: 100});
+  await wt.fillTextWithEmoji(context, '我々✨は宇宙人👽だ', 100, 150, { maxWidth: 100, loadImage });
 
   context.textAlign = "right";
-  await wt.fillTextWithTwemoji(context, 'I am right aligned 😳', 190, 200, {maxWidth: 100});
+  await wt.fillTextWithEmoji(context, 'I am right aligned 😳', 190, 200, { maxWidth: 100, loadImage });
 
   context.textAlign = "left";
-  await wt.fillTextWithTwemoji(context, 'left 😳', 10, 250);
+  await wt.fillTextWithEmoji(context, 'left 😳', 10, 250, { loadImage });
 
   context.textAlign = "center";
-  await wt.fillTextWithTwemoji(context, 'center 😳', 100, 300);
+  await wt.fillTextWithEmoji(context, 'center 😳', 100, 300, { loadImage });
 
   context.textAlign = "right";
-  await wt.fillTextWithTwemoji(context, 'right 😳', 190, 350);
+  await wt.fillTextWithEmoji(context, 'right 😳', 190, 350, { loadImage });
 
   if (req.query.text) {
-    await wt.fillTextWithTwemoji(context, req.query.text, 10, 400);
+    await wt.fillTextWithEmoji(context, req.query.text, 10, 400, { loadImage });
   }
 
-  const b64 = canvas.toDataURL().split(',');
-  const image = base64.decode(b64[1]);
+  const b64 = await canvas.toDataURL('jpg');
+  const image = base64.decode(b64.split(',')[1]);
 
   res.set('Content-Type', 'image/png');
   return res.send(image);
 });
 
-app.listen('8080');
+const server = app.listen('8086');
+
+function shutDown() {
+  server.close();
+  process.exit();
+}
+
+process.on('SIGINT', shutDown);
+process.on('SIGTERM', shutDown);

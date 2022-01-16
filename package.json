@@ -1,19 +1,22 @@
 {
-  "name": "skia-canvas-twemoji",
-  "version": "0.2.0",
-  "description": "Draw text with Twemoji on skia-canvas. Forked from cagpie's node-canvas-with-twemoji",
-  "main": "src/index.js",
+  "name": "@socialsplash/skia-canvas-twemoji",
+  "version": "1.0.0",
+  "description": "Draw text with Twemoji on skia-canvas.",
   "scripts": {
-    "start": "node src/index.js"
+    "watch": "parcel watch",
+    "build": "parcel build --no-scope-hoist --no-content-hash --no-optimize"
   },
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PolestarLabs/skia-canvas-twemoji.git"
+    "url": "git+https://github.com/socialsplash/skia-canvas-twemoji.git"
   },
   "bugs": {
-    "url": "https://github.com/PolestarLabs/skia-canvas-twemoji/issues"
+    "url": "https://github.com/socialsplash/skia-canvas-twemoji/issues"
   },
-  "homepage": "https://github.com/PolestarLabs/skia-canvas-twemoji#readme",
+  "homepage": "https://github.com/socialsplash/skia-canvas-twemoji#readme",
   "keywords": [
     "canvas",
     "skia-canvas",
@@ -21,10 +24,18 @@
     "emoji",
     "skia-canvas-twemoji"
   ],
-  "author": "tsumari <tsumari@pollux.gg>",
+  "author": "William DA SILVA <william.da.silva@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "skia-canvas": "^0.9.23",
-    "twemoji": "^13.0.1"
+    "skia-canvas": "^0.9.28",
+    "twemoji-parser": "^13.1.0"
+  },
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.2.0",
+    "@parcel/transformer-typescript-types": "^2.2.0",
+    "@types/twemoji": "^12.1.2",
+    "@types/twemoji-parser": "^13.1.1",
+    "parcel": "^2.2.0",
+    "typescript": "^4.5.4"
   }
 }

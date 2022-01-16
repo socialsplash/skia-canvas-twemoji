@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
+    "skia-canvas": "^0.9.28",
     "urlsafe-base64": "^1.0.0"
   }
 }
