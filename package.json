@@ -1,6 +1,6 @@
 {
   "name": "@socialsplash/skia-canvas-twemoji",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Draw text with Twemoji on skia-canvas.",
   "scripts": {
     "watch": "parcel watch",
