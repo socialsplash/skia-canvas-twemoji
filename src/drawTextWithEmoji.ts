@@ -17,7 +17,7 @@ export default async function drawTextWithEmoji (
   x: number,
   y: number,
   options: TextWithEmojiOptions & {
-    loadImage: AsyncGenerator<string, Promise<Image>>
+    loadImage: AsyncGenerator<string | Buffer, Promise<Image>>
   }
 ): Promise<void> {
   const maxWidth = options.maxWidth || Infinity
@@ -26,7 +26,9 @@ export default async function drawTextWithEmoji (
 
   const textEntities = splitEntitiesFromText(text)
   const fontSize = getFontSizeByCssFont(context.font)
-  const baseLine = context.measureText('').actualBoundingBoxAscent
+  // Note: "alphabeticBaseline" does not exists in the definition of TextMetrics from skia-canvas.
+  // @ts-ignore
+  const baseLine = context.measureText('').alphabeticBaseline
   const textAlign = context.textAlign
   const transform = context.currentTransform
 

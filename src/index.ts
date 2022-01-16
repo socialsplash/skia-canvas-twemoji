@@ -8,7 +8,7 @@ export async function fillTextWithEmoji (
   x: number,
   y: number,
   options: & {
-    loadImage: AsyncGenerator<string, Promise<Image>>
+    loadImage: AsyncGenerator<string | Buffer, Promise<Image>>
   }
 ): Promise<void> {
   return drawTextWithEmoji(context, 'fill', text, x, y, options)
@@ -20,7 +20,7 @@ export async function strokeTextWithEmoji (
   x: number,
   y: number,
   options: & {
-    loadImage: AsyncGenerator<string, Promise<Image>>
+    loadImage: AsyncGenerator<string | Buffer, Promise<Image>>
   }
 ): Promise<void> {
   return drawTextWithEmoji(context, 'stroke', text, x, y, options)
